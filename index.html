@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnologías de Automatización</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">AutoTech</div>
+            <div class="nav-container">
+                <ul class="nav-menu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#robotica">Robótica</a></li>
+                    <li><a href="#ia">Inteligencia Artificial</a></li>
+                    <li><a href="#iot">IoT</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <h1>Tecnologías de Automatización</h1>
+            <p>Explorando el futuro de la automatización industrial y doméstica</p>
+        </section>
+
+        <section class="content-section" id="robotica">
+            <h2>Robótica Industrial</h2>
+            <p>La robótica industrial ha revolucionado los procesos de manufactura, aumentando la eficiencia y precisión en las líneas de producción. Los robots colaborativos (cobots) trabajan junto a los humanos para optimizar los procesos.</p>
+            
+            <div class="media-gallery">
+                <div class="media-item">
+                    <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=200&fit=crop" alt="Robot industrial">
+                    <div class="media-overlay">
+                        <h4>Robots de Soldadura</h4>
+                        <p>Precisión milimétrica en procesos industriales</p>
+                    </div>
+                </div>
+                <div class="media-item">
+                    <video controls>
+                        <source src="videos/video1.mp4" type="video/mp4">
+                        Tu navegador no soporta video HTML5.
+                    </video>
+                </div>
+            </div>
+            
+            <a href="#" class="animated-btn">
+                <span>Conocer más sobre Robótica</span>
+            </a>
+        </section>
+
+        <section class="content-section" id="ia">
+            <h2>Inteligencia Artificial</h2>
+            <p>La IA está transformando la automatización mediante algoritmos de aprendizaje automático que permiten a los sistemas adaptarse y mejorar continuamente su rendimiento.</p>
+            
+            <div class="media-gallery">
+                <div class="media-item">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=200&fit=crop" alt="Inteligencia Artificial">
+                    <div class="media-overlay">
+                        <h4>Machine Learning</h4>
+                        <p>Algoritmos que aprenden y se adaptan</p>
+                    </div>
+                </div>
+                <div class="media-item">
+                    <img src="https://images.unsplash.com/photo-1518186233392-c232efbf2373?w=400&h=200&fit=crop" alt="Neural Networks">
+                    <div class="media-overlay">
+                        <h4>Redes Neuronales</h4>
+                        <p>Procesamiento de datos complejos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" id="iot">
+            <h2>Internet de las Cosas (IoT)</h2>
+            <p>Los dispositivos IoT permiten la conexión e intercambio de datos entre máquinas, creando ecosistemas inteligentes que pueden ser monitoreados y controlados remotamente.</p>
+            
+            <div class="media-gallery">
+                <div class="media-item">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=200&fit=crop" alt="IoT Devices">
+                    <div class="media-overlay">
+                        <h4>Sensores Inteligentes</h4>
+                        <p>Monitoreo en tiempo real</p>
+                    </div>
+                </div>
+                <div class="media-item">
+                    <video controls>
+                        <source src="videos/video2.mp4" type="video/mp4">
+                        Tu navegador no soporta video HTML5.
+                    </video>
+                </div>
+            </div>
+            
+            <a href="#" class="animated-btn">
+                <span>Explorar IoT</span>
+            </a>
+        </section>
+    </main>
+
+    <footer id="contacto">
+        <div class="footer-content">
+            <h3>Información de Contacto</h3>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Nombre:</strong> Angel Jacome Guanilo
+                </div>
+                <div class="contact-item">
+                    <strong>Email:</strong> U22227222@utp.edu.pe
+                </div>
+                <div class="contact-item">
+                    <strong>Teléfono:</strong> +51 968 592 708
+                </div>
+                <div class="contact-item">
+                    <strong>Universidad:</strong> UTP - Universidad Tecnológica del Perú
+                </div>
+            </div>
+            <p style="margin-top: 1rem; opacity: 0.7;">
+                © 2025 Tecnologías de Automatización - Proyecto Académico UTP
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Animación de scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Efecto parallax en el scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+        });
+
+        // Animación de entrada de elementos
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.content-section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
